@@ -31,7 +31,7 @@ jobs:
         if: runner.os == 'Linux'
         run: |
           sudo dnf install -y java-22-openjdk-openjfx
-          echo "MAVEN_OPTS=--module-path /usr/lib/jvm/java-22-openjdk/lib --add-modules javafx.controls,javafx.fxml" >> $GITHUB_ENV
+          echo "MAVEN_OPTS=--module-path /usr/lib/jvm/java-22-openjdk/lib --add-modules javafx.controls,javafx.fxml,javafx.media,javafx.graphics,javafx.base" >> $GITHUB_ENV
 
       - name: Install JavaFX (Windows)
         if: runner.os == 'Windows'
@@ -39,7 +39,7 @@ jobs:
           $JAVAFX_URL = "https://download2.gluonhq.com/openjfx/23/openjfx-23_windows-x64_bin-sdk.zip"
           Invoke-WebRequest -Uri $JAVAFX_URL -OutFile javafx.zip
           Expand-Archive -Path javafx.zip -DestinationPath $env:GITHUB_WORKSPACE/javafx
-          echo "MAVEN_OPTS=--module-path $env:GITHUB_WORKSPACE/javafx/javafx-sdk-23/lib --add-modules javafx.controls,javafx.fxml" >> $env:GITHUB_ENV
+          echo "MAVEN_OPTS=--module-path $env:GITHUB_WORKSPACE/javafx/javafx-sdk-23/lib --add-modules javafx.controls,javafx.fxml,javafx.media,javafx.graphics,javafx.base" >> $env:GITHUB_ENV
 
       - name: Verify Java and Maven versions
         run: |
@@ -47,4 +47,4 @@ jobs:
           mvn -version
 
       - name: Build and Test with Maven
-        run: mvn clean test -Dmaven.compiler.forceJavacCompilerUse=true
+        run: mvn clean test
