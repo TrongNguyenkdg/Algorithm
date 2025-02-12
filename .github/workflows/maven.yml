@@ -12,7 +12,7 @@ jobs:
   build-and-test:
     strategy:
       matrix:
-        os: [windows-latest, fedora-latest]
+        os: [windows-latest, ubuntu-latest]
 
     runs-on: ${{ matrix.os }}
 
