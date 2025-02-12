@@ -36,8 +36,11 @@ jobs:
       - name: Install JavaFX (Windows)
         if: runner.os == 'Windows'
         run: |
-          choco install openjfx
-          echo "JAVA_HOME=${JAVA_HOME}" >> $env:GITHUB_ENV
+          $JAVAFX_URL = "https://download2.gluonhq.com/openjfx/23/openjfx-23_windows-x64_bin-sdk.zip"
+          Invoke-WebRequest -Uri $JAVAFX_URL -OutFile javafx.zip
+          Expand-Archive -Path javafx.zip -DestinationPath $env:GITHUB_WORKSPACE\javafx
+          echo "PATH=$env:GITHUB_WORKSPACE\javafx\javafx-sdk-23\bin;$env:PATH" >> $env:GITHUB_ENV
+          echo "PATH=$env:GITHUB_WORKSPACE\javafx\javafx-sdk-23\lib;$env:PATH" >> $env:GITHUB_ENV
 
       - name: Verify Java and Maven versions
         run: |
@@ -45,4 +48,4 @@ jobs:
           mvn -version
 
       - name: Build and Test with Maven
-        run: mvn clean test
+        run: mvn clean test -Djavafx.module.path=$GITHUB_WORKSPACE/javafx/javafx-sdk-23/lib
