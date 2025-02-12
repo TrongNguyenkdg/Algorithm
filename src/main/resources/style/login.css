@@ -1,0 +1,51 @@
+#login, #back{
+    -fx-min-width: 100;
+    -fx-min-height: 55;
+    -fx-background-radius: 25;
+    -fx-background-insets: 0;
+    -fx-border-radius: 25;
+    -fx-border-color: #C97B84;
+    -fx-text-fill: white;
+    -fx-background-color: #37172F;
+    -fx-font-size: 15;
+}
+
+#title{
+    -fx-font-size: 25;
+    -fx-text-fill: white;
+}
+
+#vbox{
+    -fx-spacing: 10;
+    -fx-end-margin: 10;
+
+}
+
+#avatar{
+    -fx-fill: #A85751;
+    -fx-border-radius: 90;
+    -fx-border-color: #C97B84;
+}
+
+#background{
+    -fx-background-color: #040926;
+}
+
+#username, #password{
+    -fx-max-width: 400;
+    -fx-min-height: 55;
+    -fx-background-radius: 25;
+    -fx-background-insets: 0;
+    -fx-border-radius: 25;
+    -fx-border-color: #C97B84;
+    -fx-background-color: #251351;
+    -fx-text-fill: white;
+}
+
+#register{
+    -fx-text-fill: white;
+}
+
+/*#hbox{*/
+/*    -fx-min-width: 1920;*/
+/*}*/

@@ -1,0 +1,45 @@
+#back{
+    -fx-min-width: 100;
+    -fx-min-height: 55;
+    -fx-background-radius: 25;
+    -fx-background-insets: 0;
+    -fx-border-radius: 25;
+    -fx-border-color: #C97B84;
+    -fx-text-fill: white;
+    -fx-background-color: #37172F;
+    -fx-font-size: 15;
+}
+
+
+#title{
+    -fx-font-size: 25;
+    -fx-text-fill: white;
+}
+
+
+#background{
+    -fx-background-color: #040926;
+}
+
+#imageView{
+    -fx-min-height: 400;
+    -fx-min-width: 400;
+}
+
+#textArea{
+    -fx-tab-max-height: 20;
+    -fx-tab-max-width: 20;
+    -fx-font-size: 15;
+    -fx-text-fill: white;
+}
+
+#grid{
+    -fx-pref-columns: 2;
+    -fx-pref-rows: 2;
+    -fx-min-width: 100;
+    -fx-min-height: 100;
+}
+
+#hbox{
+    -fx-padding: 25;
+}
