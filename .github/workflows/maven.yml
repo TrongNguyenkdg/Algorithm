@@ -27,11 +27,12 @@ jobs:
           java-version: '22'
           cache: 'maven'
 
-      - name: Install JavaFX (Fedora)
+      - name: Install JavaFX (Ubuntu)
         if: runner.os == 'Linux'
         run: |
-          sudo dnf install -y java-22-openjdk-openjfx
-          echo "MAVEN_OPTS=--module-path /usr/lib/jvm/java-22-openjdk/lib --add-modules javafx.controls,javafx.fxml,javafx.media,javafx.graphics,javafx.base" >> $GITHUB_ENV
+          sudo apt update
+          sudo apt install -y openjfx
+          echo "MAVEN_OPTS=--module-path /usr/share/openjfx/lib --add-modules javafx.controls,javafx.fxml,javafx.media,javafx.graphics,javafx.base" >> $GITHUB_ENV
 
       - name: Install JavaFX (Windows)
         if: runner.os == 'Windows'
