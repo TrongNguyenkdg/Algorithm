@@ -47,4 +47,4 @@ jobs:
           mvn -version
 
       - name: Build and Test with Maven
-        run: mvn clean test -Dmaven.compiler.forceJavacCompilerUse=true -Djavafx.module.path=${{ env.JAVAFX_LIB }}
+        run: mvn clean test -Dmaven.compiler.forceJavacCompilerUse=true -Djavafx.module.path="${{ env.JAVAFX_LIB }}"
